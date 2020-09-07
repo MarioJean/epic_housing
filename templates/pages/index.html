@@ -15,7 +15,7 @@
           <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae quas, asperiores eveniet vel nostrum magnam
             voluptatum tempore! Consectetur, id commodi!</p>
           <div class="search">
-            <form action="search.html">
+            <form action="{% url 'search' %}">
               <!-- Form Row 1 -->
               <div class="form-row">
                 <div class="col-md-4 mb-3">
@@ -32,54 +32,9 @@
                   <label class="sr-only">State</label>
                   <select name="County" class="form-control">
                     <option selected="true" disabled="disabled">County (All)</option>
-                    <option value="MSA">Mombasa</option>
-                    <option value="KL">Kwale</option>
-                    <option value="KF">Kilifi</option>
-                    <option value="TR">Tana River</option>
-                    <option value="LMU">Lamu</option>
-                    <option value="TT">TaitaTaveta</option>
-                    <option value="GRS">Garissa</option>
-                    <option value="WJR">Wajir</option>
-                    <option value="MDR">Mandera</option>
-                    <option value="MRS">Marsabit</option>
-                    <option value="IS">Isiolo</option>
-                    <option value="MRU">Meru</option>
-                    <option value="TN">Tharaka-Nithi</option>
-                    <option value="EBU">Embu</option>
-                    <option value="KIT">Kitui</option>
-                    <option value="MCH">Machakos</option>
-                    <option value="MKU">Makueni</option>
-                    <option value="NYD">Nyandarua</option>
-                    <option value="NYI">Nyeri</option>
-                    <option value="KI">Kirinyaga</option>
-                    <option value="MUR">Murang'a</option>
-                    <option value="KBU">Kiambu</option>
-                    <option value="TUR">Turkana</option>
-                    <option value="WP">West Pokot</option>
-                    <option value="SMB">Samburu</option>
-                    <option value="TNZ">Trans Nzoia</option>
-                    <option value="UG">Uasin Gishu</option>
-                    <option value="EM">Elgeyo Marakwet</option>
-                    <option value="NA">Nandi</option>
-                    <option value="BAR">Baringo</option>
-                    <option value="LKP">Laikipia</option>
-                    <option value="NAK">Nakuru</option>
-                    <option value="NRK">Narok</option>
-                    <option value="KJD">Kajiado</option>
-                    <option value="KCO">Kericho</option>
-                    <option value="BOM">Bomet</option>
-                    <option value="KMG">Kakamega</option>
-                    <option value="VH">Vihiga</option>
-                    <option value="BNG">Bungoma</option>
-                    <option value="BU">Busia</option>
-                    <option value="SI">Siaya</option>
-                    <option value="KSM">Kisumu</option>
-                    <option value="HB">Homa Bay</option>
-                    <option value="MGR">Migori</option>
-                    <option value="KSI">Kisii</option>
-                    <option value="NYM">Nyamira</option>
-                    <option value="NRB">Nairobi</option>
-                    
+                    {% for key,value in county_choices.items %}
+                      <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}
                   </select>
                 </div>
               </div>
@@ -89,31 +44,17 @@
                   <label class="sr-only">Bedrooms</label>
                   <select name="bedrooms" class="form-control">
                     <option selected="true" disabled="disabled">Bedrooms (All)</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
+                    {% for key,value in bedroom_choices.items %}
+                      <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}
                   </select>
                 </div>
                 <div class="col-md-6 mb-3">
                   <select name="price" class="form-control" id="type">
                     <option selected="true" disabled="disabled">Max Price (Any)</option>
-                    <option value="100000">Ksh100,000</option>
-                    <option value="200000">Ksh200,000</option>
-                    <option value="300000">Ksh300,000</option>
-                    <option value="400000">Ksh400,000</option>
-                    <option value="500000">Ksh500,000</option>
-                    <option value="600000">Ksh600,000</option>
-                    <option value="700000">Ksh700,000</option>
-                    <option value="800000">Ksh800,000</option>
-                    <option value="900000">Ksh900,000</option>
-                    <option value="1000000">Ksh1M+</option>
+                    {% for key,value in price_choices.items %}
+                      <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}
                   </select>
                 </div>
               </div>
