@@ -15,7 +15,10 @@
         <!-- Lightbox -->
         <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
       
-        <title>Epic Housing</title>
+        <title>Epic Housing
+            {% block title %}
+            {% endblock %}
+        </title>
       </head>
 <body>
     
